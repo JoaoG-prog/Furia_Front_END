@@ -25,7 +25,7 @@
     "@vitejs/plugin-react": "^4.0.3",
     "vite": "^4.4.5"
   },
-  "description": "<<<<<<< HEAD\r <<<<<<< HEAD\r # FURIA Fan Chat",
+ "description":"FURIA Fan Chat",
   "main": "vite.config.js",
   "repository": {
     "type": "git",
