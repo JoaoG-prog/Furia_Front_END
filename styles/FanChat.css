@@ -1,0 +1,106 @@
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 5px rgba(255, 74, 0, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(255, 74, 0, 0.8);
+  }
+  100% {
+    box-shadow: 0 0 5px rgba(255, 74, 0, 0.5);
+  }
+}
+
+@keyframes neonPulse {
+  0% {
+    text-shadow: 0 0 5px rgba(0, 240, 255, 0.5);
+  }
+  50% {
+    text-shadow: 0 0 15px rgba(0, 240, 255, 0.8);
+  }
+  100% {
+    text-shadow: 0 0 5px rgba(0, 240, 255, 0.5);
+  }
+}
+
+.fan-chat-container {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(0, 240, 255, 0.2);
+  transition: all 0.3s ease;
+}
+
+.fan-chat-container:hover {
+  box-shadow: 0 0 30px rgba(0, 240, 255, 0.4);
+}
+
+.fan-chat-header {
+  position: relative;
+  overflow: hidden;
+}
+
+.fan-chat-header::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #FF4A00, #00F0FF, transparent);
+  animation: neonPulse 2s infinite;
+}
+
+.fan-chat-messages {
+  position: relative;
+}
+
+.message {
+  transition: all 0.2s ease;
+  animation: fadeIn 0.3s ease-out;
+}
+
+.message:hover {
+  transform: translateX(5px);
+}
+
+.system-message {
+  background: rgba(0, 240, 255, 0.1);
+  border-left: 4px solid #00F0FF;
+}
+
+.reaction-message {
+  background: rgba(255, 74, 0, 0.1);
+  border-left: 4px solid #FF4A00;
+  font-weight: bold;
+}
+
+/* Bot message styling */
+.message[data-bot="true"] {
+  border-left: 4px solid #00F0FF;
+}
+
+/* User message styling */
+.message[data-user="true"] {
+  border-left: 4px solid #FF4A00;
+}
+
+/* Input field glow effect */
+input:focus {
+  animation: glow 2s infinite;
+}
+
+/* Send button hover effect */
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 15px rgba(255, 74, 0, 0.5);
+} 
